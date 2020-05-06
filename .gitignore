@@ -1,5 +1,5 @@
 auth.json
-.vscode/*
+.vscode/
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
@@ -18,6 +18,7 @@ auth.json
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
+.idea/
 
 # Generated files
 .idea/**/contentModel.xml
@@ -219,3 +220,10 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+.vscode/settings.json
+.idea/LulaBot.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/inspectionProfiles/profiles_settings.xml
+.idea/.gitignore
