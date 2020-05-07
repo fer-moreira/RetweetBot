@@ -1,29 +1,27 @@
-import requests 
-from core.handlers import Handlers
-from core.settings import Configurations
+import tweepy
+from tweepy import OAuthHandler, API
 
 class Authorization:
-    """ Make quick authorization calls """
+    def __init__ (self, settings):
+        self.client_key = settings.client_key()
+        self.client_secret = settings.client_secret()
+        self.access_token_key = settings.access_token_key()
+        self.access_token_secret = settings.access_token_secret()
 
-    @staticmethod
-    def access_token () -> str:
-        try:
-            config = Configurations()
-            auth_url = config.auth_url()
+    def oauth (self):
+        __auth = OAuthHandler(
+            self.client_key, 
+            self.client_secret
+        )
+        
+        __auth.set_access_token(
+            self.access_token_key, 
+            self.access_token_secret
+        )
 
-            b64_keys = Handlers.encode_keys(
-                client_key    = config.client_key(), 
-                client_secret = config.client_secret()
-            )
+        return __auth
 
-            auth_headers = {
-                'Authorization': 'Basic {}'.format(b64_keys),
-                'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
-            }
-
-            auth_data = { 'grant_type': 'client_credentials' }
-            auth_resp = requests.post(auth_url, headers=auth_headers, data=auth_data)
-            access_token = auth_resp.json()['access_token']
-
-            return access_token
-        except: raise
+    def api (self):
+        __oauth = self.oauth()
+        __api = API(__oauth);
+        return __api
