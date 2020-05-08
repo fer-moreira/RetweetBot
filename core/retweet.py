@@ -20,7 +20,7 @@ class Retweet:
                 tweet.retweet()
                 success = "[RETWEETED -> {ID}] '{AN} - @{ANID}' - '{TEXT}...'".format(
                     ID   = tweet.id,
-                    TEXT = str(tweet.text)[:50],
+                    TEXT = str(tweet.text)[:50].replace("\n",""),
                     AN   = tweet.user.name,
                     ANID = tweet.user.screen_name
                 )
