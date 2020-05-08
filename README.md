@@ -1,18 +1,21 @@
 # Twitter RetweetBot
 
+### a simple bot for twitter that retweets everything with a specified word.
+
 
 ## Getting started 
 
- Primeiro de tudo,  você precisa criar um app do tipo "BOT" no link abaixo.
+First of all, you need to create a "BOT" app on the link below.
 
 https://developer.twitter.com/
 
-Depois de solicitar o app, você irá precisar de algumas chaves e tokens de verificação do app
+After creating the app, you will need the app verification keys and tokens
+
 
 | KEY                    | VALUE                          	|
 |---------------------	|-------------------------------	|
-| Consumer API 			| XXXXXXXXXXXXXXXXX             	|
-| Consumer API Secret    | xxxxxxxxxxxxxxxxxxxxxxxxxxxxx 	|
+| Consumer API 		| XXXXXXXXXXXXXXXXX             	|
+| Consumer API Secret   | xxxxxxxxxxxxxxxxxxxxxxxxxxxxx 	|
 | Access Token        	| xxxxxxxxxxxxxxxxx             	|
 | Access Token Secret 	| xxxxxxxxxxxxxxxxxxxxxxxxxxxx  	|
 | Access Level        	| Read and Write                	|
@@ -58,8 +61,8 @@ Depois de solicitar o app, você irá precisar de algumas chaves e tokens de ver
 	[RETWEETED -> 1258555341958254593] '𝘼𝙣𝙙𝙧𝙚® - @andrerezendef' - 'Pra mim quem aplaude Lula é tão burro quanto quem ...'
 	
 
-Esse código está sendo usado por:
+This code is being used by:
 https://twitter.com/LulaBotOficial
 
-Criado por:
+Created by:
 https://twitter.com/nando_ferreira2
