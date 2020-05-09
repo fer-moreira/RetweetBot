@@ -34,7 +34,9 @@ After creating the app, you will need the app verification keys and tokens
 	    "query" : [
 	        "CHOOSE A WORD"
 	    ],
-	    "count" : 10
+	    "count" : 50,
+	    "result_type" : "recent",
+	    "iso_language_code" : "pt"
 	}
 	
 
@@ -54,15 +56,9 @@ After creating the app, you will need the app verification keys and tokens
 	[RETWEETED -> 1258555418416230402] 'Seoade Lula - @Seoade' - 'RT @HGabrielaRM: @dilmabr Deveriam julgar cada emb...'
 	[RETWEETED -> 1258555410925211656] 'claudio riso lopes - @claudiorisolope' - 'RT @EstevamReboucas: Lula: Essa gente ñ pode ficar...'
 	[RETWEETED -> 1258555396857442305] 'Jesus Marte Fajardo - @martefajardo' - '@PedroMCasals @realDonaldTrump Trump  es la salvac...'
-	[327] - 	1258555395183972353 -> You have already retweeted this Tweet.
-	[327] - 1258555388888256512 -> You have already retweeted this Tweet.
-	[327] - 1258555388464705538 -> You have already retweeted this Tweet.
 	[RETWEETED -> 1258555361897975809] 'Hugo Ricardo (ugO37) - @ugO377' - 'A admiração e fanatismo, louco e inconsequente por...'
 	[RETWEETED -> 1258555341958254593] '𝘼𝙣𝙙𝙧𝙚® - @andrerezendef' - 'Pra mim quem aplaude Lula é tão burro quanto quem ...'
 	
 
-This code is being used by:
-https://twitter.com/LulaBotOficial
-
-Created by:
-https://twitter.com/nando_ferreira2
+- used in: https://twitter.com/LulaBotOficial
+- created by: https://twitter.com/nando_ferreira2
