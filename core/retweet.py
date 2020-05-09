@@ -1,11 +1,13 @@
 from tweepy import Cursor, TweepError
+from core.handlers import dicto, Helper
 import json, ast
 
 class Retweet:
     def __init__ (self, api, settings):
         self.api = api
-        self.count = int(settings.count())
-        self.query = tuple(settings.query())
+        self.count = int(settings.count)
+        self.query = tuple(settings.query)
+        self.settings = settings
 
     def timeline (self):
         __cursor = Cursor(self.api.search, self.query)
@@ -18,7 +20,7 @@ class Retweet:
 
         for tweet in tweets:
             try:
-                if not "RT @" in str(tweet.text):
+                if Helper.can_retweet(tweet, self.settings):
                     tweet.retweet()
                     retweet_count += 1
                     print("[RETWEETED -> {ID}] '{AN} - @{ANID}' - '{TEXT}...'".format(
@@ -27,6 +29,8 @@ class Retweet:
                         AN   = tweet.user.name,
                         ANID = tweet.user.screen_name
                     ))
+                else:
+                    pass
 
             except TweepError as e:
                 reason = e.reason
@@ -34,7 +38,6 @@ class Retweet:
                 reason_list = ast.literal_eval(reason)
                 assert type(reason_list) == list, TypeError("reason_list should be list of dict")
                 error = reason_list[0]
-                
                 # IF USER REACH THE LIMIT OF THE DAY 
                 if error.get('code') == 185:
                     print("[{STATUS}] - {MESSAGE}".format(
