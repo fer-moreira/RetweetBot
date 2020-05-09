@@ -19,3 +19,5 @@ if __name__ == "__main__":
         main(str(_args[0]))
     except IndexError:
         print("json file argument is missing.\ntry running: python app.py auth.json")
+    except KeyboardInterrupt:
+        print("Process interrupted by the user")
