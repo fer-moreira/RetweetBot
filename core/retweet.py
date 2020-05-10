@@ -9,13 +9,14 @@ class Retweet:
         self.query = tuple(settings.query)
         self.settings = settings
 
-    def timeline (self):
+    def timeline (self, count):
         __cursor = Cursor(self.api.search, self.query)
-        __tweets = __cursor.items(self.count)
+        __tweets = __cursor.items(count)
         return __tweets
     
     def retweet_from_timeline (self):
-        tweets = self.timeline()
+
+        tweets = self.timeline(self.count)
         retweet_count = 0
 
         for tweet in tweets:
@@ -53,4 +54,11 @@ class Retweet:
             except Exception as e:
                 print(e)
 
-        print("Retweeted: {0}".format(retweet_count))
+        remaining_count = (self.count - retweet_count)
+
+        print("Retweeted: {0} | remaining: {1}\n".format(retweet_count, remaining_count))
+
+        if remaining_count > 0:
+            self.count = remaining_count
+            self.retweet_from_timeline()
+        

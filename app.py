@@ -8,15 +8,17 @@ def main (auth_file_dir):
     settings = Settings(auth_file_dir).parse()
     auth = Authorization(settings)
     api = auth.api()
-
-    s = sched.scheduler(time.time, time.sleep)
-    s.enter(60*60, 1, retweet, (s,api,settings))
-    s.run()
-
-def retweet (s, api, settings):
     rt = Retweet(api, settings)
     rt.retweet_from_timeline()
-    s.enter(60*60, 1, retweet, (s, api, settings))
+
+    # s = sched.scheduler(time.time, time.sleep)
+    # s.enter(60*60, 1, retweet, (s,api,settings))
+    # s.run()
+
+# def retweet (s, api, settings):
+#     rt = Retweet(api, settings)
+#     rt.retweet_from_timeline()
+    # s.enter(60*60, 1, retweet, (s, api, settings))
 
 if __name__ == "__main__":
     try: 
