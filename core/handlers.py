@@ -34,5 +34,3 @@ class Helper:
         except TypeError as e:
             print(e)
             return False
-        except:
-            raise

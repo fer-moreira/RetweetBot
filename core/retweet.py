@@ -15,7 +15,6 @@ class Retweet:
         return __tweets
     
     def retweet_from_timeline (self):
-
         tweets = self.timeline(self.count)
         retweet_count = 0
 
@@ -30,9 +29,7 @@ class Retweet:
                         AN   = tweet.user.name,
                         ANID = tweet.user.screen_name
                     ))
-                else:
-                    pass
-
+                else: pass
             except TweepError as e:
                 reason = e.reason
                 assert type(reason) == str, TypeError("Reason must be String type")
@@ -51,8 +48,6 @@ class Retweet:
                         ID=tweet.id,
                         MESSAGE=error.get('message')
                     ))
-            except Exception as e:
-                print(e)
 
         remaining_count = (self.count - retweet_count)
 
